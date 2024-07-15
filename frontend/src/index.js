@@ -4,15 +4,25 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { ConfigProvider } from 'antd';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <BrowserRouter>
-      <App />
-      </BrowserRouter>
-    </ThemeProvider>
+    <ConfigProvider
+      theme={{
+        token: {
+
+          // Modify the token here to changed the theme of the whole app
+        },
+      }}
+    >
+      <ThemeProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
+    </ConfigProvider>
   </React.StrictMode>
 );
