@@ -9,15 +9,15 @@ env/
 *.pyc
 __pycache__/
 *.log
-/node_modules/
-/dist/
-/coverage/
-/*.env
-/*.log
-/.eslintcache
-/npm-debug.log*
-/yarn-debug.log*
-/yarn-error.log*
+backend/node_modules/
+backend/dist/
+backend/coverage/
+backend/*.env
+backend/*.log
+backend/.eslintcache
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
 
 # Frontend (React.js)
 frontend/node_modules/
