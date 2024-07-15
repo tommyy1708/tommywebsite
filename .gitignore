@@ -4,7 +4,7 @@ env/
 # General
 .DS_Store
 .env
-
+node_modules/
 # Backend (Node.js)
 *.pyc
 __pycache__/
