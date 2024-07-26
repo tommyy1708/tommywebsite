@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tommywebsite/static/css/main.38d4ff9f.css",
+    "main.js": "/tommywebsite/static/js/main.e811702a.js",
+    "index.html": "/tommywebsite/index.html",
+    "main.38d4ff9f.css.map": "/tommywebsite/static/css/main.38d4ff9f.css.map",
+    "main.e811702a.js.map": "/tommywebsite/static/js/main.e811702a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38d4ff9f.css",
+    "static/js/main.e811702a.js"
+  ]
+}
