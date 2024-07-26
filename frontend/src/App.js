@@ -52,6 +52,8 @@ const App = () => {
     backgroundColor: myTheme ? token.colorBgBase : '',
   };
 
+  console.log(`${process.env.PUBLIC_URL}/public/resume/Hua_FIU_CS.pdf`);
+
   return (
     <ConfigProvider
       theme={{
@@ -95,7 +97,7 @@ const App = () => {
                 </a>
                 {' | '}
                 <a
-                  href="public/resume/Hua_FIU_CS.pdf"
+                  href={`${process.env.PUBLIC_URL}/public/resume/Hua_FIU_CS.pdf`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

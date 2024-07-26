@@ -41,7 +41,6 @@ export default function Home() {
     textWrap: 'pretty',
     justifyContent: 'center',
     padding: '0 2rem',
-    // maxWidth: '400px',
     textAlign: 'left',
     fontSize: '1.2rem',
     lineHeight: '1.6',
@@ -56,8 +55,8 @@ export default function Home() {
       <Col xs={24} md={12}>
         <img
           className="image"
-          src="public/images/home_bg.webp" // Replace with your optimized photo path
-          alt="Tommy Z"
+          src={`${process.env.PUBLIC_URL}/public/images/home_bg.webp`}
+          alt="home_bg"
           style={imageStyle}
         />
         <div className="overlay" style={overlayStyle}></div>
