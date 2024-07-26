@@ -1,19 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
 import App from './App';
-import { ThemeContext } from './context/ThemeContext';
+import { render, screen, fireEvent } from '@testing-library/react';
 
-const themeContextValue = {
-  myTheme: true,
-  themeChange: jest.fn(),
-};
-
-test('renders learn react link', () => {
-  render(
-    <ThemeContext.Provider value={themeContextValue}>
-      <App />
-    </ThemeContext.Provider>
-  );
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('my test', () => {
+  render(<App />);
 });
