@@ -9,17 +9,17 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <ConfigProvider
+    {/* <ConfigProvider
       theme={{
         token: {
 
           // Modify the token here to changed the theme of the whole app
         },
       }}
-    >
+    > */}
       <ThemeProvider>
           <App />
       </ThemeProvider>
-    </ConfigProvider>
+    {/* </ConfigProvider> */}
   </React.StrictMode>
 );

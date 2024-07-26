@@ -1,0 +1,43 @@
+name: Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push to main branch
+    paths:
+      - 'frontend/**'  # Only run the workflow when changes are made in the frontend directory
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22.4.1'
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build the app
+        run: |
+          cd frontend
+          npm run build
+
+      - name : Test the app
+        run: |
+          cd frontend/public
+          pwd
+
+      - name: Deploy to GitHub Pages
+        run: |
+          cd frontend
+          npm run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

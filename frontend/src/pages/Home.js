@@ -56,7 +56,7 @@ export default function Home() {
       <Col xs={24} md={12}>
         <img
           className="image"
-          src="/images/home_bg.webp" // Replace with your optimized photo path
+          src="public/images/home_bg.webp" // Replace with your optimized photo path
           alt="Tommy Z"
           style={imageStyle}
         />

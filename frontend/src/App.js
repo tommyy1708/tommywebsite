@@ -63,7 +63,7 @@ const App = () => {
         },
       }}
     >
-      <Router>
+      <Router basename="/tommywebsite">
         <Layout style={layoutStyle}>
           <HeaderMenu />
           <Content className="image-container" style={contentStyle}>
@@ -96,7 +96,7 @@ const App = () => {
                 </a>
                 {' | '}
                 <a
-                  href="/resume/Hua_FIU_CS.pdf"
+                  href="public/resume/Hua_FIU_CS.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
