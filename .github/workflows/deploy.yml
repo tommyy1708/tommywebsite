@@ -29,7 +29,13 @@ jobs:
         run: |
           cd frontend
           npm run build
-          
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "hzhan081@fiu.edu"
+          git config --global user.name "Tommy"
+
+
       - name: Deploy to GitHub Pages
         run: |
           cd frontend
