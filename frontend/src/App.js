@@ -38,11 +38,12 @@ const App = () => {
     display: 'flex',
     paddingTop: '4rem',
     paddingBottom: '4rem',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
     textAlign: 'center',
     minHeight: 'calc(100vh - 4rem)',
     lineHeight: '120px',
+
     backgroundColor: myTheme ? token.colorBgBase : '',
   };
 
