@@ -7,6 +7,9 @@ on:
     paths:
       - 'frontend/**'  # Only run the workflow when changes are made in the frontend directory
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
