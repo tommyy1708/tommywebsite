@@ -1,0 +1,43 @@
+
+.ant-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ant-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.ant-card-body {
+  font-size: 1.5rem;
+  color: #595959;
+}
+
+.ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+  border-radius: 5px;
+}
+
+.ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.project-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.projects-layout-content{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  background-color:#f7f7f7; ;
+  padding: 24px;
+}

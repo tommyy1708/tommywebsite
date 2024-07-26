@@ -29,12 +29,7 @@ jobs:
         run: |
           cd frontend
           npm run build
-
-      - name : Test the app
-        run: |
-          cd frontend/public
-          pwd
-
+          
       - name: Deploy to GitHub Pages
         run: |
           cd frontend
