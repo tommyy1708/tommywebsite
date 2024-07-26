@@ -1,8 +1,6 @@
 import React from 'react';
-import { Card, Layout, Menu, Button, Row, Col } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { Card, Button, Row, Col } from 'antd';
 import '../styles/Projects.model.css'
-const { Header, Content, Footer } = Layout;
 
 const data = [
   {
