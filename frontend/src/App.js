@@ -24,6 +24,7 @@ const { Text } = Typography;
 
 const App = () => {
   const ctx = useContext(ThemeContext);
+  const {myTheme} = ctx;
   const { useToken } = theme;
   const { token } = useToken();
 
@@ -42,19 +43,19 @@ const App = () => {
     textAlign: 'center',
     minHeight: 'calc(100vh - 4rem)',
     lineHeight: '120px',
-    backgroundColor: ctx.myTheme ? token.colorBgBase : '',
+    backgroundColor: myTheme ? token.colorBgBase : '',
   };
 
   const footerStyle = {
     textAlign: 'center',
     minHeight: 64,
-    backgroundColor: ctx.myTheme ? token.colorBgBase : '',
+    backgroundColor: myTheme ? token.colorBgBase : '',
   };
 
   return (
     <ConfigProvider
       theme={{
-        algorithm: ctx.myTheme
+        algorithm: myTheme
           ? theme.defaultAlgorithm
           : theme.darkAlgorithm,
         token: {
