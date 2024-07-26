@@ -55,7 +55,7 @@ export default function Home() {
       <Col xs={24} md={12}>
         <img
           className="image"
-          src={`${process.env.PUBLIC_URL}/public/images/home_bg.webp`}
+          src={`${process.env.PUBLIC_URL}/images/home_bg.webp`}
           alt="home_bg"
           style={imageStyle}
         />

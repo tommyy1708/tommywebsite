@@ -97,7 +97,7 @@ const App = () => {
                 </a>
                 {' | '}
                 <a
-                  href={`${process.env.PUBLIC_URL}/public/resume/Hua_FIU_CS.pdf`}
+                  href={`${process.env.PUBLIC_URL}/resume/Hua_FIU_CS.pdf`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
