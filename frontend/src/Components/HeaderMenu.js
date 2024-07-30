@@ -41,10 +41,6 @@ const HeaderMenu = () => {
   const menuItems = [
     { key: '/', label: <Link to="/">About Me</Link> },
     { key: '/projects', label: <Link to="/projects">Projects</Link> },
-    {
-      key: '/experience',
-      label: <Link to="/experience">Experience</Link>,
-    },
     { key: '/contact', label: <Link to="/contact">Contact</Link> },
   ];
 
