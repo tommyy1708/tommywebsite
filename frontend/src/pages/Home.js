@@ -51,6 +51,8 @@ export default function Home() {
     fontSize: '1.2rem',
     lineHeight: '1.6',
   };
+
+  
   return (
     <Row
       style={imageContainerStyle}
