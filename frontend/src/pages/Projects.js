@@ -10,15 +10,15 @@ const data = [
       'Golden Rice Kiosk is an advanced food ordering system designed for convenient, to-go food orders. It streamlines the ordering process, allowing customers to avoid long wait times. With a user-friendly interface, the kiosk enables quick selection and customization of meals, ensuring a seamless and efficient dining experience. Perfect for busy individuals, Golden Rice Kiosk enhances customer satisfaction by reducing wait times and simplifying the food ordering process.',
     status: 'Active',
     demo_url:
-      'https://foodordernext-6wnjtqr11-tommyy1708.vercel.app/',
+      'https://foodordernext-6wnjtqr11-tommyy1708.vercel.app',
   },
   {
     key: '2',
-    name: 'Hair Natural WMS',
+    name: 'Warehouse Management System',
     description:
-      'Hair Natural WMS is a straightforward warehouse management system designed for efficient inventory control and streamlined operations. With its intuitive interface, it simplifies the tracking, managing, and organizing of warehouse inventory, ensuring accurate and real-time updates. Ideal for businesses seeking a hassle-free solution, Hair Natural WMS enhances productivity and minimizes errors, providing a reliable tool for effective warehouse management.',
+      'Warehouse Management System(WMS) is a straightforward warehouse management system designed for efficient inventory control and streamlined operations. With its intuitive interface, it simplifies the tracking, managing, and organizing of warehouse inventory, ensuring accurate and real-time updates. Ideal for businesses seeking a hassle-free solution, this WMS enhances productivity and minimizes errors, providing a reliable tool for effective warehouse management.',
     status: 'Active',
-    demo_url: 'https://supplier-website-bice.vercel.app/',
+    demo_url: 'https://wms-demo.vercel.app',
   },
   {
     key: '3',
