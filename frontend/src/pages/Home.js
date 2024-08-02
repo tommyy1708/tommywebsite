@@ -10,8 +10,8 @@ export default function Home() {
 
   const imageContainerStyle = {
     position: 'relative',
-    width: '100%',
-    height: 'auto',
+    // width: '100%',
+    // height: 'auto',
     display: 'flex',
     justifyContent: 'center',
     marginBottom: '20px',
@@ -21,7 +21,11 @@ export default function Home() {
     width: '75%',
     height: 'auto',
     borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    boxShadow: `${
+      ctx.myTheme
+        ? '.25rem .5rem 1rem rgba(0, 0, 0, 0.75)'
+        : '.25rem .5rem 1rem rgba(155, 155, 155, 0.75)'
+    }`,
   };
 
   const overlayStyle = {
@@ -29,8 +33,10 @@ export default function Home() {
     top: '7%',
     left: '12%',
     width: '78%',
-    height: '75%',
-    border: `4px solid ${ctx.myTheme ? token.colorPrimary : '#333'}`,
+    height: '80%',
+    border: `4px solid ${
+      ctx.myTheme ? token.colorPrimary : 'rgba(200,220, 255, 1)'
+    }`,
     transform: 'rotate(-5deg)',
     borderRadius: '10px',
   };
@@ -52,7 +58,7 @@ export default function Home() {
       justify="center"
       align="middle"
     >
-      <Col xs={24} md={12}>
+      <Col xs={24} md={12} className='home-left-bar' >
         <img
           className="image"
           src={`${process.env.PUBLIC_URL}/images/home_bg.webp`}

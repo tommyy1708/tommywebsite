@@ -1,99 +1,54 @@
+// src/Contact.js
 import React from 'react';
-import { Form, Input, Button, Row, Col, Typography } from 'antd';
+import { Card, Typography } from 'antd';
+import { motion } from 'framer-motion';
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Link } = Typography;
 
-const Contact = () => {
-  const [form] = Form.useForm();
+const cardVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0 },
+};
 
-  const onFinish = (values) => {
-    console.log('Success:', values);
-  };
-
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
-
+function Contact() {
   return (
-    <div className="contact-page">
-      <Row justify="center" align="middle" style={{ height: '100%' }}>
-        <Col xs={24} sm={20} md={16} lg={12} xl={10}>
-          <div className="contact-card">
-            <Title
-              level={2}
-              style={{ textAlign: 'center', marginBottom: '20px' }}
-            >
-              Contact Us
-            </Title>
-            <Paragraph
-              style={{ textAlign: 'center', marginBottom: '40px' }}
-            >
-              We'd love to hear from you! Please fill out the form
-              below and we'll get in touch with you shortly.
-            </Paragraph>
-            <Form
-              form={form}
-              name="contact"
-              layout="vertical"
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-            >
-              <Form.Item
-                label="Name"
-                name="name"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please enter your name',
-                  },
-                ]}
-              >
-                <Input placeholder="Your name" />
-              </Form.Item>
-              <Form.Item
-                label="Email"
-                name="email"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please enter your email',
-                  },
-                  {
-                    type: 'email',
-                    message: 'Please enter a valid email',
-                  },
-                ]}
-              >
-                <Input placeholder="Your email" />
-              </Form.Item>
-              <Form.Item
-                label="Message"
-                name="message"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please enter your message',
-                  },
-                ]}
-              >
-                <Input.TextArea rows={4} placeholder="Your message" />
-              </Form.Item>
-              <Form.Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  block
-                  style={{ borderRadius: '5px' }}
-                >
-                  Submit
-                </Button>
-              </Form.Item>
-            </Form>
-          </div>
-        </Col>
-      </Row>
+    <div
+      style={{
+        position: 'absolute',
+        right: 0,
+        top: '33%',
+        padding: '20px 0 20px 20px',
+        // maxWidth: '100%',
+        margin: 0,
+        overflow: 'hidden',
+      }}
+    >
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={cardVariants}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
+        <Card
+          style={{
+            right: 0,
+            width: '40rem',
+            textAlign: 'center',
+            borderTopRightRadius: '0',
+            borderBottomRightRadius:'0',
+          }}
+        >
+          <Title level={2}>Contact Me</Title>
+          <Paragraph>
+            You can reach me at: <br />
+            <Link href="mailto:tommyy1708@gmail.com">
+              tommyy1708@gmail.com
+            </Link>
+          </Paragraph>
+        </Card>
+      </motion.div>
     </div>
   );
-};
+}
 
 export default Contact;

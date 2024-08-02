@@ -42,7 +42,6 @@ const App = () => {
     textAlign: 'center',
     minHeight: 'calc(100vh - 4rem)',
     lineHeight: '120px',
-
     backgroundColor: myTheme ? token.colorBgBase : '',
   };
 
