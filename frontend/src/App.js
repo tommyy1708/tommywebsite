@@ -51,7 +51,6 @@ const App = () => {
     backgroundColor: myTheme ? token.colorBgBase : '',
   };
 
-  console.log(`${process.env.PUBLIC_URL}/public/resume/Hua_FIU_CS.pdf`);
 
   return (
     <ConfigProvider
