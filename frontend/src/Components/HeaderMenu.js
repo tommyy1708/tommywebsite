@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import {Layout, Menu, Row, Col, Switch, Typography } from 'antd';
+import { Layout, Menu, Row, Col, Switch, Typography } from 'antd';
 import { SunOutlined, MoonOutlined } from '@ant-design/icons';
 import { ThemeContext } from '../context/ThemeContext';
 
 const { Header } = Layout;
-const {Text} = Typography;
+const { Text } = Typography;
 
 const HeaderMenu = () => {
   const location = useLocation();
@@ -22,12 +22,14 @@ const HeaderMenu = () => {
 
   const headerStyle = {
     textAlign: 'center',
-    position: 'absolute',
+    position: 'fixed', // Fix the header at the top
     top: 0,
     left: 0,
     width: '100%',
     lineHeight: '64px',
-    backgroundColor: 'rgba(0, 0, 0, 0)',
+    backgroundColor: `${ctx.myTheme ? '#fff' : '#40a9ff'}`,
+    zIndex: 1000, // Ensure the header stays on top
+    // boxShadow: `${ctx.myTheme ? 'none' : '0 2px 8px #f0f1f2'}`, // Optional: Add a shadow for better separation
   };
 
   const menuStyle = {

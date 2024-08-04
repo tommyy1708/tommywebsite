@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button, Row, Col } from 'antd';
-import '../styles/Projects.model.css'
+import '../styles/Projects.model.css';
 
 const data = [
   {
@@ -9,8 +9,7 @@ const data = [
     description:
       'Golden Rice Kiosk is an advanced food ordering system designed for convenient, to-go food orders. It streamlines the ordering process, allowing customers to avoid long wait times. With a user-friendly interface, the kiosk enables quick selection and customization of meals, ensuring a seamless and efficient dining experience. Perfect for busy individuals, Golden Rice Kiosk enhances customer satisfaction by reducing wait times and simplifying the food ordering process.',
     status: 'Active',
-    demo_url:
-      'https://foodordernext-6wnjtqr11-tommyy1708.vercel.app',
+    demo_url: 'https://foodordernext-6wnjtqr11-tommyy1708.vercel.app',
   },
   {
     key: '2',
@@ -32,53 +31,60 @@ const data = [
 
 const Projects = () => {
   return (
-        <div
-          className="projects-layout-content"
-        >
-          <Row gutter={[16, 16]}>
-            {data.map((project) => (
-              <Col span={8} key={project.key}>
-                <Card
-                  title={project.name}
-                  bordered={false}
-                  hoverable
-                  style={{
-                    borderRadius: '10px',
-                    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-                  }}
-                >
-                  <p
-                    className="project-description"
-                    style={{ fontSize: '16px', color: '#595959' }}
-                  >
-                    {project.description}
-                  </p>
-                  <p
-                    style={{
-                      fontWeight: 'bold',
-                      color:
-                        project.status === 'Active'
-                          ? 'green'
-                          : project.status === 'Developing'
-                          ? 'blue'
-                          : 'orange',
-                    }}
-                  >
-                    Status: {project.status}
-                  </p>
-                  <Button
-                    type="primary"
-                    style={{ borderRadius: '5px' }}
-                    href={project.demo_url}
-                    target="_blank"
-                  >
-                    Visit
-                  </Button>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </div>
+    <div className="projects-layout-content">
+      <Row gutter={[16, 16]}>
+        {data.map((project) => (
+          <Col
+            key={project.key}
+            xs={24}
+            sm={24}
+            md={12}
+            lg={8}
+            xl={8}
+          >
+            <Card
+              title={project.name}
+              bordered={false}
+              hoverable
+              style={{
+                borderRadius: '10px',
+                border: '1px solid #40a9ff',
+                borderColor:'#40a9ff',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+              }}
+            >
+              <p
+                className="project-description"
+                style={{ fontSize: '16px', color: '#595959' }}
+              >
+                {project.description}
+              </p>
+              <p
+                style={{
+                  fontWeight: 'bold',
+                  color:
+                    project.status === 'Active'
+                      ? 'green'
+                      : project.status === 'Developing'
+                      ? 'blue'
+                      : 'orange',
+                }}
+              >
+                Status: {project.status}
+              </p>
+              <Button
+                type="primary"
+                style={{ borderRadius: '5px' }}
+                href={project.demo_url}
+                target="_blank"
+              >
+                Visit
+              </Button>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </div>
   );
 };
 

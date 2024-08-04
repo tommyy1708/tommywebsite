@@ -23,7 +23,7 @@ const { Text } = Typography;
 
 const App = () => {
   const ctx = useContext(ThemeContext);
-  const {myTheme} = ctx;
+  const { myTheme } = ctx;
   const { useToken } = theme;
   const { token } = useToken();
 
@@ -32,10 +32,9 @@ const App = () => {
     width: '100%',
   };
 
-
   const contentStyle = {
     display: 'flex',
-    paddingTop: '4rem',
+    paddingTop: '4rem', // Adjust padding to match the height of the header
     paddingBottom: '4rem',
     alignItems: 'stretch',
     justifyContent: 'center',
@@ -50,7 +49,6 @@ const App = () => {
     minHeight: 64,
     backgroundColor: myTheme ? token.colorBgBase : '',
   };
-
 
   return (
     <ConfigProvider
