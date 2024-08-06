@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Layout, Menu, Row, Col, Switch, Typography } from 'antd';
 import { SunOutlined, MoonOutlined } from '@ant-design/icons';
 import { ThemeContext } from '../context/ThemeContext';
-
 const { Header } = Layout;
 const { Text } = Typography;
 
@@ -43,6 +42,7 @@ const HeaderMenu = () => {
   const menuItems = [
     { key: '/', label: <Link to="/">About Me</Link> },
     { key: '/projects', label: <Link to="/projects">Projects</Link> },
+    { key: '/blog', label: <Link to="/blog">Blog</Link> },
     { key: '/contact', label: <Link to="/contact">Contact</Link> },
   ];
 

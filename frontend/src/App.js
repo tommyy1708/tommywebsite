@@ -17,6 +17,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import HeaderMenu from './Components/HeaderMenu';
+import BlogList from './pages/BlogList';
 
 const { Footer, Content } = Layout;
 const { Text } = Typography;
@@ -49,7 +50,6 @@ const App = () => {
     minHeight: 64,
     backgroundColor: myTheme ? token.colorBgBase : '',
   };
-
   return (
     <ConfigProvider
       theme={{
@@ -69,6 +69,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<BlogList />} />
             </Routes>
           </Content>
           <Footer style={footerStyle}>
