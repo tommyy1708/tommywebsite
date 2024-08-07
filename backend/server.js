@@ -5,9 +5,7 @@ const path = require('path');
 const topicRoutes = require('./routes/topics');
 const contentRoutes = require('./routes/content');
 const commentRoutes = require('./routes/comments');
-require('dotenv').config({
-  path: path.resolve(__dirname, '../.env'),
-});
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -21,8 +19,7 @@ app.use(express.json());
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGODB_URI, {
-  })
+  .connect(`${process.env.MONGODB_URI}${process.env.MONGODB_DATABASE}`, {})
   .then(() => {
     console.log('Connected to MongoDB');
     // Start the server
