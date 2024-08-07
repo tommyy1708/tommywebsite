@@ -1,40 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Select, message } from 'antd';
-import { createContent } from '../services/contentService';
-import { getTopics } from '../services/topicService';
+import React, { useState } from 'react';
+import { Form, Input, Button, message } from 'antd';
 
-const { Option } = Select;
 const { TextArea } = Input;
 
 const NewPost = () => {
-  const [topics, setTopics] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
 
-  useEffect(() => {
-    const fetchTopics = async () => {
-      try {
-        const topics = await getTopics();
-        setTopics(topics);
-      } catch (error) {
-        console.error('Failed to fetch topics:', error);
-      }
-    };
-    fetchTopics();
-  }, []);
-
   const handleSubmit = async (values) => {
-    const newPost = {
-      topic: values.topic,
-      body: values.body,
+    setLoading(true);
+    const topicData = {
+      title: values.title,
+      description: values.description,
     };
+
     try {
-      const createdPost = await createContent(newPost);
-      console.log('New Post Created:', createdPost);
+      // Create the Topic
+      const topicResponse = await fetch(
+        'http://localhost:3001/api/topics',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(topicData),
+        }
+      );
+
+      if (!topicResponse.ok) {
+        throw new Error('Failed to create topic');
+      }
+
+      const topic = await topicResponse.json();
+
+      // Create the Content
+      const contentData = {
+        topic: topic._id,
+        title: values.title, // assuming content should also have a title
+        body: values.body,
+      };
+
+      const contentResponse = await fetch(
+        'http://localhost:3001/api/contents',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(contentData),
+        }
+      );
+
+      if (!contentResponse.ok) {
+        throw new Error('Failed to create content');
+      }
+
+      const content = await contentResponse.json();
+
+      console.log('New Post Created:', { topic, content });
       message.success('New post created successfully');
       form.resetFields();
     } catch (error) {
       console.error('Error creating post:', error);
       message.error('Failed to create post');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -75,23 +105,8 @@ const NewPost = () => {
         >
           <TextArea placeholder="Content Body" rows={6} />
         </Form.Item>
-        <Form.Item
-          name="topic"
-          label="Select Topic"
-          rules={[
-            { required: true, message: 'Please select a topic' },
-          ]}
-        >
-          <Select placeholder="Select Topic">
-            {topics.map((topic) => (
-              <Option key={topic._id} value={topic._id}>
-                {topic.title}
-              </Option>
-            ))}
-          </Select>
-        </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" loading={loading}>
             Create Post
           </Button>
         </Form.Item>

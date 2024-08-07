@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import {
   Typography,
   Layout,
@@ -6,7 +7,6 @@ import {
   Row,
   Col,
 } from 'antd';
-import React, { useContext } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import {
   BrowserRouter as Router,
@@ -18,6 +18,8 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import HeaderMenu from './Components/HeaderMenu';
 import BlogList from './pages/BlogList';
+import NewPost from './Components/NewPost';
+import PostDetail from './pages/PostDetail';
 
 const { Footer, Content } = Layout;
 const { Text } = Typography;
@@ -35,7 +37,7 @@ const App = () => {
 
   const contentStyle = {
     display: 'flex',
-    paddingTop: '4rem', // Adjust padding to match the height of the header
+    paddingTop: '4rem',
     paddingBottom: '4rem',
     alignItems: 'stretch',
     justifyContent: 'center',
@@ -50,18 +52,19 @@ const App = () => {
     minHeight: 64,
     backgroundColor: myTheme ? token.colorBgBase : '',
   };
+
+  const base_name_url = '/tommywebsite';
+
   return (
     <ConfigProvider
       theme={{
         algorithm: myTheme
           ? theme.defaultAlgorithm
           : theme.darkAlgorithm,
-        token: {
-          // Modify the token here to changed the theme only at the Layout level
-        },
+        token: {},
       }}
     >
-      <Router basename="/tommywebsite">
+      <Router basename={base_name_url}>
         <Layout style={layoutStyle}>
           <HeaderMenu />
           <Content className="image-container" style={contentStyle}>
@@ -70,6 +73,8 @@ const App = () => {
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/blog" element={<BlogList />} />
+              <Route path="/newpost" element={<NewPost />} />
+              <Route path="/topics/:id" element={<PostDetail />} />
             </Routes>
           </Content>
           <Footer style={footerStyle}>
